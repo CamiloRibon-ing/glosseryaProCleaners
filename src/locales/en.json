@@ -1,0 +1,15 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "pricing": "Pricing",
+    "book": "Book Now",
+    "careers": "Careers",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Professional Cleaning Services in Canada",
+    "subtitle": "Modern, reliable, and eco-friendly cleaning for your home or business."
+  }
+}

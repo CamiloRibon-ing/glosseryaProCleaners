@@ -1,0 +1,168 @@
+/* Employment.css */
+.employment-page {
+  min-height: 100vh;
+  background: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+}
+.employment-hero {
+  width: 100%;
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.employment-hero-overlay {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(21,101,192,0.6) 0%, rgba(24,24,24,0.6) 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.employment-title {
+  color: #fff;
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin-bottom: 2.5rem;
+  text-shadow: 0 4px 24px #18181899;
+  z-index: 2;
+}
+.employment-form {
+  max-width: 950px;
+  margin: -40px auto 0 auto;
+  background: linear-gradient(120deg, #f8fafc 60%, #e3f2fd 100%);
+  border-radius: 2rem;
+  box-shadow: 0 8px 40px 0 rgba(33,150,243,0.13), 0 2px 12px 0 rgba(255,193,7,0.10);
+  padding: 2.8rem 2.2rem 2.5rem 2.2rem;
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: fadeInForm 0.7s cubic-bezier(.4,1.4,.6,1) 1;
+}
+
+@keyframes fadeInForm {
+  from { opacity: 0; transform: translateY(40px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+.form-row {
+  display: flex;
+  gap: 1.2rem;
+  width: 100%;
+  box-sizing: border-box;
+  transition: gap 0.2s;
+}
+.form-group {
+  flex: 1 1 0;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  position: relative;
+}
+.form-group label {
+  font-weight: 600;
+  color: #0d47a1;
+  margin-bottom: 0.2rem;
+  letter-spacing: 0.5px;
+}
+input, textarea, select {
+  border: 1.5px solid #e0e0e0;
+  border-radius: 0.9rem;
+  padding: 0.85rem 1.1rem;
+  font-size: 1.05rem;
+  background: #f8f9fa;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+  outline: none;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: #1565c0;
+  box-shadow: 0 0 0 2px #bbdefb;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: #ffd700;
+  outline: none;
+}
+.checkbox-group, .radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-top: 0.2rem;
+}
+.checkbox-group label, .radio-group label {
+  background: #f1f8e9;
+  border-radius: 0.7rem;
+  padding: 0.4rem 1.1rem 0.4rem 0.7rem;
+  color: #33691e;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.checkbox-group label:hover, .radio-group label:hover {
+  background: #dcedc8;
+  color: #1b5e20;
+}
+.employment-btn {
+  background: linear-gradient(90deg, #ffd700 60%, #1565c0 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.13rem;
+  border: none;
+  border-radius: 1.2rem;
+  padding: 1.1rem 2.5rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  box-shadow: 0 2px 12px 0 rgba(33,150,243,0.13);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  letter-spacing: 1px;
+}
+.employment-btn:hover {
+  background: linear-gradient(90deg, #ffd700 80%, #1565c0 100%);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 4px 18px 0 rgba(33,150,243,0.18);
+}
+.form-status {
+  margin-top: 1rem;
+  color: #43a047;
+  font-weight: 700;
+  font-size: 1.08rem;
+}
+@media (max-width: 900px) {
+  .employment-form {
+    padding: 1.1rem 0.2rem;
+    margin: 18px 0 0 0;
+    border-radius: 1.1rem;
+  }
+  .form-row {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  .employment-btn {
+    font-size: 1.05rem;
+    padding: 1rem 1.2rem;
+    border-radius: 0.9rem;
+  }
+  .form-group label {
+    font-size: 1rem;
+  }
+  input, textarea, select {
+    font-size: 0.98rem;
+    padding: 0.7rem 0.7rem;
+    border-radius: 0.7rem;
+  }
+}

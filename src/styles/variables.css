@@ -1,0 +1,8 @@
+/* variables.css */
+:root {
+  --primary: #1565c0; /* Azul marca */
+  --accent: #ffb300;  /* Dorado marca */
+  --dark: #181818;   /* Navbar y textos oscuros */
+  --light: #fff;     /* Fondo */
+  --navbar-active: #e53935; /* Rojo para item activo en navbar */
+}

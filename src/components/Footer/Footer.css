@@ -1,0 +1,39 @@
+.booknow-footer {
+  width: 100%;
+  background: #222;
+  color: #e0f7fa;
+  padding: 24px 0 12px 0;
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 32px 32px 0 0;
+  box-shadow: 0 -2px 16px rgba(0,0,0,0.08);
+}
+.footer-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.footer-socials {
+  margin-top: 10px;
+}
+@media (max-width: 900px) {
+  .booknow-footer {
+    width: 100vw;
+    border-radius: 0;
+    margin-left: 0;
+    transform: none;
+  }
+  .footer-content {
+    max-width: 98vw;
+    font-size: 0.95rem;
+  }
+}

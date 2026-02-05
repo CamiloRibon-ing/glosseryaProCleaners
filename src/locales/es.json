@@ -1,0 +1,15 @@
+{
+  "navbar": {
+    "home": "Inicio",
+    "about": "Sobre nosotros",
+    "services": "Servicios",
+    "pricing": "Precios",
+    "book": "Reservar",
+    "careers": "Empleos",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Servicios de limpieza profesionales en Canadá",
+    "subtitle": "Limpieza moderna, confiable y ecológica para tu hogar o negocio."
+  }
+}

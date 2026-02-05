@@ -1,0 +1,15 @@
+{
+  "navbar": {
+    "home": "Accueil",
+    "about": "À propos",
+    "services": "Services",
+    "pricing": "Tarifs",
+    "book": "Réserver",
+    "careers": "Carrières",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Services de nettoyage professionnels au Canada",
+    "subtitle": "Nettoyage moderne, fiable et écologique pour votre maison ou entreprise."
+  }
+}
