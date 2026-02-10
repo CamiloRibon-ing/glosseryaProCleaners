@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="booknow-footer">
       <div className="footer-content">
         <span>© {new Date().getFullYear()} RT Cleaning Service. All rights reserved.</span>
-        <span style={{ marginLeft: 12, color: '#009688', fontWeight: 500 }}>
+        <span style={{ marginLeft: 12, color: '#fff', fontWeight: 500 }}>
           glossycleanerspro@gmail.com
         </span>
       </div>

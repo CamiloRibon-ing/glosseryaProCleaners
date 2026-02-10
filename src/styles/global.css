@@ -1,3 +1,36 @@
+/* Responsive styles for Home page map section */
+@media (max-width: 900px) {
+  .map-section > section > div {
+    flex-direction: column !important;
+    min-height: 0 !important;
+    gap: 0 !important;
+  }
+  .map-section > section > div > div:first-child {
+    min-height: 220px !important;
+    height: 220px !important;
+    border-radius: 18px 18px 0 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+  }
+  .map-section > section > div > div:last-child {
+    border-radius: 0 0 18px 18px !important;
+    max-width: 100vw !important;
+    margin-left: 0 !important;
+    width: 100vw !important;
+    box-sizing: border-box;
+    padding: 24px 8px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .map-section > section > div > div:first-child {
+    min-height: 160px !important;
+    height: 160px !important;
+  }
+  .map-section > section > div > div:last-child {
+    padding: 16px 4px !important;
+  }
+}
 /* global.css */
 body {
   margin: 0;

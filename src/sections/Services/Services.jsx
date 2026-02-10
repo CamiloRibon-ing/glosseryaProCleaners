@@ -58,36 +58,18 @@ export default function Services() {
 
   return (
     <section className="services-section" id="services">
-      <div className="services-hero" style={{
-        backgroundImage: `url(${fondoImg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        minHeight: '180px',
-        borderRadius: '1.5rem',
-        marginBottom: '2.2rem',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        position: 'relative',
-        boxShadow: '0 4px 32px 0 rgba(33,150,243,0.10)',
-        overflow: 'hidden',
-      }}>
-        <div style={{
-          background: 'linear-gradient(90deg, rgba(21,101,192,0.82) 60%, rgba(255,215,0,0.55) 100%)',
-          position: 'absolute',
-          top: 0, left: 0, right: 0, bottom: 0,
-          zIndex: 1
-        }}></div>
-        <h2 className="services-title fade-in" style={{
-          color: '#fff',
-          zIndex: 2,
-          fontSize: '2.5rem',
-          fontWeight: 900,
-          letterSpacing: '1.5px',
-          textShadow: '0 2px 12px #18181899',
-        }}>Our Services</h2>
+      <div className="services-bg-curve">
+        <svg viewBox="0 0 1440 220" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="servicesCurveGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stopColor="oklch(0.685 0.169 237.323)" />
+              <stop offset="100%" stopColor="oklch(0.685 0.169 237.323)" />
+            </linearGradient>
+          </defs>
+          <path d="M0,0 C400,120 1040,0 1440,180 L1440,0 L0,0 Z" fill="url(#servicesCurveGrad)" fillOpacity="0.85" />
+        </svg>
       </div>
+      <h2 className="services-title fade-in">Our Services</h2>
       <div className="services-cards">
         {services.map((service, i) => (
           <div
@@ -105,6 +87,17 @@ export default function Services() {
             <a href="/services" className="service-card-btn">Learn More</a>
           </div>
         ))}
+      </div>
+      <div className="services-bg-curve-bottom">
+        <svg viewBox="0 0 1440 120" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="servicesCurveGradBottom" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stopColor="oklch(0.685 0.169 237.323)" />
+              <stop offset="100%" stopColor="oklch(0.685 0.169 237.323)" />
+            </linearGradient>
+          </defs>
+          <path d="M0,120 C400,0 1040,120 1440,0 L1440,120 L0,120 Z" fill="url(#servicesCurveGradBottom)" fillOpacity="0.85" />
+        </svg>
       </div>
     </section>
   );

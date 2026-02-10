@@ -1,10 +1,15 @@
-
 /* Estilos para Why Us */
 .whyus-section {
   width: 100%;
   padding: 4rem 1rem 2.5rem 1rem;
   background: #f8f9fa;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .whyus-title {
   font-size: 2.5rem;
@@ -47,10 +52,11 @@
   gap: 2rem;
   justify-content: center;
   align-items: stretch;
+  margin-top: 2.5rem;
 }
 .whyus-card {
-  background: linear-gradient(135deg, #2196f3 70%, #42a5f5 100%);
-  color: #fff;
+  background: rgba(255,255,255,0.18);
+  color: #181818;
   border-radius: 2rem;
   box-shadow: 0 4px 32px 0 rgba(33,150,243,0.12), 0 1.5px 8px 0 rgba(255,193,7,0.10);
   width: 240px;
@@ -63,15 +69,21 @@
   font-size: 1.1rem;
   font-weight: 600;
   position: relative;
-  transition: transform 0.22s, box-shadow 0.22s;
+  transition: transform 0.22s, box-shadow 0.22s, background 0.22s;
   opacity: 0;
-  animation: fadeCardIn 1.1s cubic-bezier(.23,1.01,.32,1) forwards;
+  transform: translateY(40px) scale(0.98);
+  animation: whyusCardFadeIn 1.1s cubic-bezier(.23,1.01,.32,1) forwards;
   overflow: hidden;
+  border: 1.5px solid rgba(33,150,243,0.10);
+  backdrop-filter: blur(8px) saturate(1.2);
+  -webkit-backdrop-filter: blur(8px) saturate(1.2);
 }
 .whyus-card:hover,
 .whyus-card:focus-within {
   transform: translateY(-8px) scale(1.04);
   box-shadow: 0 8px 32px 0 var(--accent), 0 1.5px 8px 0 rgba(33,150,243,0.18);
+  background: rgba(255,255,255,0.32);
+  border: 1.5px solid #ffd700;
 }
 .whyus-card .whyus-card-hover {
   opacity: 0;
@@ -116,11 +128,24 @@
   cursor: pointer;
   text-decoration: none;
   transition: background 0.22s, color 0.22s, box-shadow 0.22s;
+  animation: whyusBtnPulse 1.8s 2.2s infinite alternate cubic-bezier(.23,1.01,.32,1);
 }
-.whyus-card-btn:hover {
-  background: linear-gradient(90deg, #e6c200 60%, #ffd700 100%);
-  color: #222;
-  box-shadow: 0 4px 16px 0 rgba(255,193,7,0.28);
+@keyframes whyusBtnPulse {
+  0% {
+    box-shadow: 0 2px 8px 0 rgba(255,193,7,0.18);
+    background: linear-gradient(90deg, #ffd700 60%, #e6c200 100%);
+    color: #333;
+  }
+  60% {
+    box-shadow: 0 6px 24px 0 #ffd700cc;
+    background: linear-gradient(90deg, #ffe082 60%, #ffd54f 100%);
+    color: #181818;
+  }
+  100% {
+    box-shadow: 0 2px 8px 0 rgba(255,193,7,0.18);
+    background: linear-gradient(90deg, #ffd700 60%, #e6c200 100%);
+    color: #333;
+  }
 }
 .whyus-card-highlight {
   /* Efecto especial para el primer card al hacer hover */
@@ -133,16 +158,16 @@
   box-shadow: 0 12px 40px 0 #ffd700, 0 2px 12px 0 #ffe082;
 }
 .whyus-icon {
-  font-size: 2.8rem;
-  margin-bottom: 1.2rem;
-  filter: drop-shadow(0 2px 8px #fff);
+  font-size: 2.5rem;
+  margin-bottom: 1.1rem;
+  filter: drop-shadow(0 2px 12px #2196f3aa);
 }
 .whyus-card-title {
-  color: #fff;
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-top: 0.5rem;
-  text-shadow: 0 2px 8px #2196f3;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+  color: #1565c0;
+  text-shadow: 0 2px 8px #fffbe5cc;
 }
 .fade-in {
   opacity: 0;
@@ -157,18 +182,14 @@
   }
 }
 
-@keyframes fadeCardIn {
-  from {
+@keyframes whyusCardFadeIn {
+  0% {
     opacity: 0;
     transform: translateY(40px) scale(0.98);
   }
-  60% {
-    opacity: 0.7;
-    transform: translateY(-8px) scale(1.01);
-  }
-  to {
+  100% {
     opacity: 1;
-    transform: none;
+    transform: translateY(0) scale(1);
   }
 }
 
@@ -189,6 +210,40 @@
   .whyus-desc {
     font-size: 1rem;
   }
+}
+.whyus-section {
+  width: 100%;
+  padding: 4rem 1rem 2.5rem 1rem;
+  background: #f8f9fa;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.whyus-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.22;
+  filter: blur(1.5px) brightness(0.85) grayscale(10%);
+  pointer-events: none;
+}
+.whyus-section .whyus-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(33,150,243,0.18) 0%, rgba(255,215,0,0.10) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+.whyus-section > *:not(.whyus-bg-video):not(.whyus-overlay) {
+  position: relative;
+  z-index: 2;
 }
 /* whyus.css */
 section {

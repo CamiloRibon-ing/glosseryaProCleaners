@@ -1,4 +1,7 @@
 import './whyus.css';
+import whyusVideo from '../../assets/images/residencialcleaning.mp4';
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const cards = [
   {
@@ -24,6 +27,22 @@ const cards = [
 ];
 
 export default function WhyUs() {
+  const navigate = useNavigate();
+  useEffect(() => {
+    const revealCards = () => {
+      const cards = document.querySelectorAll('.whyus-card');
+      const windowHeight = window.innerHeight;
+      cards.forEach(card => {
+        const cardTop = card.getBoundingClientRect().top;
+        if (cardTop < windowHeight - 100) {
+          card.classList.add('visible');
+        }
+      });
+    };
+    window.addEventListener('scroll', revealCards);
+    revealCards();
+    return () => window.removeEventListener('scroll', revealCards);
+  }, []);
   const cardInfo = [
     {
       info: 'Book your cleaning at any time, any day. Flexible scheduling for your convenience.',
@@ -48,6 +67,8 @@ export default function WhyUs() {
   ];
   return (
     <section className="whyus-section">
+      <video className="whyus-bg-video" src={whyusVideo} autoPlay loop muted playsInline preload="auto" />
+      <div className="whyus-overlay" />
       <h2 className="whyus-title fade-in">Why GlossyaPro Cleaners?</h2>
       <p className="whyus-desc fade-in">
         <span style={{color: 'var(--primary)', fontWeight: 'bold'}}>GlossyaPro Cleaners</span> is a leading provider of cleaning services with an outstanding reputation for quality and integrity throughout the GTA and surrounding area. For over 8 years, we provide high-quality residential home cleaning, commercial cleaning, carpet cleaning, window cleaning, Pre/Post Renovation Cleaning, Move In/Move Out Cleaning and Carpets/Furniture Cleaning.
@@ -63,7 +84,7 @@ export default function WhyUs() {
             <div className="whyus-card-title">{card.title}</div>
             <div className="whyus-card-hover">
               <div className="whyus-card-info">{cardInfo[i].info}</div>
-              <a href={cardInfo[i].link} className="whyus-card-btn">{cardInfo[i].button}</a>
+              <button className="whyus-card-btn" onClick={() => navigate('/book')}>{cardInfo[i].button}</button>
             </div>
           </div>
         ))}

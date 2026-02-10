@@ -1,14 +1,16 @@
 .booknow-footer {
   width: 100%;
-  background: #222;
-  color: #e0f7fa;
-  padding: 24px 0 12px 0;
+  background: linear-gradient(90deg, #2196f3 70%, #42a5f5 100%) !important;
+  color: #fff;
+  padding: 32px 0 16px 0;
   margin-top: 48px;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 32px 32px 0 0;
-  box-shadow: 0 -2px 16px rgba(0,0,0,0.08);
+  box-shadow: 0 -2px 16px rgba(33,150,243,0.10);
+  position: relative;
+  overflow: hidden;
 }
 .footer-content {
   width: 100%;
@@ -19,21 +21,41 @@
   align-items: center;
   justify-content: center;
   gap: 18px;
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 1.08rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 8px rgba(21,101,192,0.13), 0 1px 0 #fff;
 }
 .footer-socials {
   margin-top: 10px;
 }
+
 @media (max-width: 900px) {
   .booknow-footer {
     width: 100vw;
     border-radius: 0;
     margin-left: 0;
     transform: none;
+    padding: 24px 0 12px 0;
   }
   .footer-content {
     max-width: 98vw;
     font-size: 0.95rem;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .booknow-footer {
+    padding: 14px 0 8px 0;
+    margin-top: 24px;
+  }
+  .footer-content {
+    font-size: 0.88rem;
+    gap: 6px;
+    padding: 0 4px;
   }
 }

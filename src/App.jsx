@@ -40,9 +40,9 @@ function App() {
                   boxShadow: '0 4px 32px rgba(0,0,0,0.07)'
                 }}>
                   <div style={{
-                    width: '100%',
-                    maxWidth: '700px',
-                    margin: '0 auto',
+                    width: '100vw',
+                    maxWidth: '100vw',
+                    margin: '0',
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
@@ -52,10 +52,10 @@ function App() {
                   }}>
                     {/* Map */}
                     <div style={{
-                      width: '100%',
+                      width: '100vw',
                       minHeight: '340px',
                       height: '340px',
-                      borderRadius: '18px',
+                      borderRadius: '0',
                       overflow: 'hidden',
                       background: '#fff',
                       boxShadow: '0 4px 24px rgba(0,0,0,0.08)',
@@ -64,9 +64,9 @@ function App() {
                       <iframe
                         title="RT Cleaning Service Location"
                         src="https://www.google.com/maps?q=100+Humber+College+Blvd,+Etobicoke,+ON+M9V+5G4,+Canada&output=embed"
-                        width="100%"
+                        width="100vw"
                         height="100%"
-                        style={{ border: 0, width: '100%', height: '100%', minHeight: '340px', minWidth: '100%' }}
+                        style={{ border: 0, width: '100vw', height: '100%', minHeight: '340px', minWidth: '100vw', borderRadius: 0 }}
                         allowFullScreen=""
                         loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade"
